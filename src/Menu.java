@@ -59,16 +59,22 @@ public class Menu extends JFrame {
                     creationJoueur creat = new creationJoueur("2");
                     creat.setVisible(true);
                     System.out.println("2 joueur");
+                    Meeples mp1= new Meeples();
+                    mp1.setNbrJoueurs(7);
                 }
                 if(nbrJoueur.getSelectedItem().toString() == "3"){
                     creationJoueur creat = new creationJoueur("3");
                     creat.setVisible(true);
                     System.out.println("3 joueur");
+                    Meeples mp1= new Meeples();
+                    mp1.setNbrJoueurs(10);
                 }
                 if(nbrJoueur.getSelectedItem().toString() == "4"){
                     creationJoueur creat = new creationJoueur("4");
                     creat.setVisible(true);
                     System.out.println("4 joueur");
+                    Meeples mp1= new Meeples();
+                    mp1.setNbrJoueurs(13);
                 }
 
             }

@@ -1,5 +1,5 @@
 import javax.swing.*;
-import java.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +18,6 @@ public class VueJoueur extends JFrame{
         initAttribut();
         creerVue();
         setLocation(10*nbJoueur,10);
-
 
 
 
