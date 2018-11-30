@@ -1,8 +1,11 @@
+import java.awt.*;
+
 public class Joueur{
     private int id;
     private String name;
     private int pointDeVictoires;
     private int pointDeReputation;
+    private Color couleurJoueur;
 
     public Joueur(int id, String name) {
         this.id = id;
@@ -14,6 +17,11 @@ public class Joueur{
     public int augmenterPoint(Joueur j){
         j.pointDeVictoires +=1;
         return j.pointDeVictoires ;
+    }
+
+    public int augmenterRep(Joueur j){
+        j.pointDeReputation +=1;
+        return j.pointDeReputation ;
     }
 
     public int getId() {
@@ -46,5 +54,17 @@ public class Joueur{
 
     public void setPointDeReputation(int pointDeReputation) {
         this.pointDeReputation = pointDeReputation;
+    }
+
+    public Color getCouleurJoueur(int id) {
+        switch (id){
+            /*jaune rouge bleu vert*/
+            case 0 : couleurJoueur = Color.YELLOW; break;
+            case 1 : couleurJoueur = Color.RED; break;
+            case 2 : couleurJoueur = Color.BLUE; break;
+            case 3 : couleurJoueur = Color.GREEN; break;
+            default: couleurJoueur = Color.BLACK;break;
+        }
+        return couleurJoueur;
     }
 }

@@ -12,6 +12,8 @@ public class VueJoueur extends JFrame{
     Icon iconJoueur;
 
     private JButton augmenterScore = new JButton("Tirer carte");
+    private JButton augmenterRep = new JButton("Augmenter reputation");
+    private JButton laideReputation = new JButton("?");
 
     public VueJoueur(Joueur joueur, int nbJoueur){
         this.joueur = joueur;
@@ -24,7 +26,7 @@ public class VueJoueur extends JFrame{
         // titre, icon, position initiale et non redimensionable
         setTitle("Jeu");
 //        setLocation(10,10);
-        setResizable(false);
+        setResizable(true);
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         display();
@@ -56,6 +58,18 @@ public class VueJoueur extends JFrame{
         JPanel pPtReputation = new JPanel();
         pPtReputation.add(lptReputation1);
         pPtReputation.add(lptReputation2);
+        pPtReputation.add(laideReputation);
+        laideReputation.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (laideReputation.getText().equals("?")){
+                    laideReputation.setText("2 pts : 1 action | 5 pts : 1 action | 8 pts : 1 action | 12 : decolage d'1 vaisseau");
+
+                } else {
+                    laideReputation.setText("?");
+                }
+            }
+        });
 
         JPanel pPtVictoire= new JPanel();
         pPtVictoire.add(lptVictoire1);
@@ -84,6 +98,14 @@ public class VueJoueur extends JFrame{
                lptVictoire2.setText(""+joueur.augmenterPoint(joueur));
             }
         });
+        pBox.add(augmenterRep);
+        augmenterRep.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lptReputation2.setText(""+joueur.augmenterRep(joueur));
+            }
+        });
+
 
         setContentPane(pBox);
     }

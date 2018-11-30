@@ -21,7 +21,7 @@ public class MenuDepart extends JFrame {
 
     public void initAttribut() {
 
-        menu=new ImageIcon("ganymede.jpeg");
+        menu=new ImageIcon("src/ganymede.jpeg");
         image=new JLabel(menu);
 
         jouer=new JButton("Jouer");
