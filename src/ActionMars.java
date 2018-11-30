@@ -1,0 +1,15 @@
+public enum ActionMars {
+    recrute_violet_ou_bleu,
+    reput,
+    recrute_colon,
+    transfert,
+    echanger_colon_rouge,
+    action_basique,
+    echanger_colon_contre_violet,
+    echanger_colon_contre_jaune,
+    echanger_colon,
+    recrute_rouge_ou_jaune,
+    recrute_colon_type_violet,
+    echanger_avec_colon_bleu_type_violet,
+    recruter_colon,
+}
