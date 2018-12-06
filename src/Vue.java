@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.tools.Tool;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -58,7 +59,11 @@ public class Vue extends JFrame {
         creerWidget();
         ajouterWigetVersion();
         pack();
-        setSize(1920,1080);
+        setTitle("Ganymede");
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        int xSize = ((int) tk.getScreenSize().getWidth());
+        int ySize = ((int) tk.getScreenSize().getHeight());
+        setSize(xSize,ySize);
         setVisible(true);                                 // Affiche la fenetre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Gestion de la fermeture
     }
@@ -312,7 +317,7 @@ public class Vue extends JFrame {
     private void ajouterWigetVersion() {
 
         JPanel ligne_vaisseau = new JPanel();
-        ligne_vaisseau.setLayout(new GridLayout(1,3));
+        ligne_vaisseau.setLayout(new GridLayout(1,3) );
 
         getBoardVaisseauColon().add(getVaisseauColonList().get(0));
         getVaisseauColonList().remove(0);
