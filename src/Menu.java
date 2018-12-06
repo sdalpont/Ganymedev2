@@ -55,7 +55,6 @@ public class Menu extends JFrame {
                     System.out.println("2 joueur");
                     Meeples mp1= new Meeples();
                     mp1.setNbrJoueurs(7);
-                    dispose();
                 }
                 if(nbrJoueur.getSelectedItem().toString() == "3"){
                     CreationJoueur creat = new CreationJoueur("3");
@@ -63,7 +62,6 @@ public class Menu extends JFrame {
                     System.out.println("3 joueur");
                     Meeples mp1= new Meeples();
                     mp1.setNbrJoueurs(10);
-                    dispose();
                 }
                 if(nbrJoueur.getSelectedItem().toString() == "4"){
                     CreationJoueur creat = new CreationJoueur("4");
@@ -71,9 +69,8 @@ public class Menu extends JFrame {
                     System.out.println("4 joueur");
                     Meeples mp1= new Meeples();
                     mp1.setNbrJoueurs(13);
-                    dispose();
                 }
-
+                dispose();
             }
         });
 
