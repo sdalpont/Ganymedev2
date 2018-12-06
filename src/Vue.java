@@ -58,7 +58,7 @@ public class Vue extends JFrame {
         creerWidget();
         ajouterWigetVersion();
         pack();
-        setSize(400,600);
+        setSize(1920,1080);
         setVisible(true);                                 // Affiche la fenetre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Gestion de la fermeture
     }
@@ -389,6 +389,37 @@ public class Vue extends JFrame {
         ligneTerre.add(getBoardTerreList().get(3));
 
         /*----------------------------------------------------------------------------------------*/
+        JButton colon = new JButton();
+        JButton colon1 = new JButton();
+        JButton colon2 = new JButton();
+
+        JPanel colonGrid = new JPanel();
+        colonGrid.setPreferredSize(new Dimension(150,150));
+        colonGrid.add(colon);
+        colonGrid.add(colon1);
+        colonGrid.add(colon2);
+        colonGrid.setLayout(new GridLayout(3,1));
+
+
+        JButton mars = new JButton("mars");
+        mars.setPreferredSize(new Dimension(100,150));
+        JButton terre = new JButton("terre");
+       terre.setPreferredSize(new Dimension(100,150));
+        JButton vaiseauColon1 = new JButton("Vaisseau colon");
+        vaiseauColon1.setPreferredSize(new Dimension(100,150));
+        JButton vaiseauColon2 = new JButton("Vaisseau colon");
+        vaiseauColon2.setPreferredSize(new Dimension(100,150));
+
+        JPanel plateau = new JPanel();
+        plateau.add(colonGrid);
+
+        plateau.add(mars);
+        plateau.add(terre);
+        plateau.add(vaiseauColon1);
+        plateau.add(vaiseauColon2);
+
+        /*----------------------------------------------------------------------------------------*/
+
 
         JPanel fenetre = new JPanel();
         fenetre.add(ligne_vaisseau);
@@ -403,11 +434,12 @@ public class Vue extends JFrame {
         fenetre3.add(ligneTerre);
 
         JPanel panAll = new JPanel();
-        panAll.setPreferredSize(new Dimension(400,500));
+        panAll.setPreferredSize(new Dimension(500,600));
         panAll.add(fenetre);
         panAll.add(fenetre1);
         panAll.add(fenetre2);
         panAll.add(fenetre3);
+        panAll.add(plateau);
         setContentPane(panAll);
 
     }
