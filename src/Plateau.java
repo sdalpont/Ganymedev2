@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Plateau {
 
-    public Plateau(Joueur j1){
+    public Plateau(Joueur joueur){
 
     }
 

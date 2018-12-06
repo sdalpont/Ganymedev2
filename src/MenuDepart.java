@@ -37,9 +37,7 @@ public class MenuDepart extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 Menu menu=new Menu();
                 menu.setVisible(true);
-
-                MenuDepart menu1=new MenuDepart();
-                menu1.dispose();
+                dispose();
 
 
             }

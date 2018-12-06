@@ -11,7 +11,7 @@ public class Menu extends JFrame {
     private JMenu aide = new JMenu("Aide");
     private JPanel pan = new JPanel();
 
-    String[] nbrJ = {"1","2","3","4"};
+    String[] nbrJ = {"2","3","4"};
     JComboBox nbrJoueur = new JComboBox(nbrJ);
     private JLabel labelJoueur = new JLabel("Nombre de Joueur");
     int joueur = 0;
@@ -48,33 +48,30 @@ public class Menu extends JFrame {
         valider.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(nbrJoueur.getSelectedItem().toString() == "1"){
-
-                    creationJoueur creat = new creationJoueur("1");
-                    creat.setVisible(true);
-                    System.out.println("1 joueur");
-                }
                 if(nbrJoueur.getSelectedItem().toString() == "2"){
 
-                    creationJoueur creat = new creationJoueur("2");
+                    CreationJoueur creat = new CreationJoueur("2");
                     creat.setVisible(true);
                     System.out.println("2 joueur");
                     Meeples mp1= new Meeples();
                     mp1.setNbrJoueurs(7);
+                    dispose();
                 }
                 if(nbrJoueur.getSelectedItem().toString() == "3"){
-                    creationJoueur creat = new creationJoueur("3");
+                    CreationJoueur creat = new CreationJoueur("3");
                     creat.setVisible(true);
                     System.out.println("3 joueur");
                     Meeples mp1= new Meeples();
                     mp1.setNbrJoueurs(10);
+                    dispose();
                 }
                 if(nbrJoueur.getSelectedItem().toString() == "4"){
-                    creationJoueur creat = new creationJoueur("4");
+                    CreationJoueur creat = new CreationJoueur("4");
                     creat.setVisible(true);
                     System.out.println("4 joueur");
                     Meeples mp1= new Meeples();
                     mp1.setNbrJoueurs(13);
+                    dispose();
                 }
 
             }

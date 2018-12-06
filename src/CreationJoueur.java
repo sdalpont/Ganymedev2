@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class creationJoueur extends JFrame {
+public class CreationJoueur extends JFrame {
     private JMenuBar menuBar = new JMenuBar();
     private JMenu option = new JMenu("Option");
     private JMenu aide = new JMenu("Aide");
@@ -16,11 +16,13 @@ public class creationJoueur extends JFrame {
     JTextArea j3 = new JTextArea(2,25);
     JTextArea j4 = new JTextArea(2,25);
 
+    Model model = new Model();
+
     private JButton valider = new JButton("Valider");
 
     private Menu menu = new Menu();
 
-    public creationJoueur(String nbrJoueur){
+    public CreationJoueur(String nbrJoueur){
         CardLayout cardL = new CardLayout();
         JPanel content = new JPanel();
         setSize(400,300);
@@ -74,35 +76,32 @@ public class creationJoueur extends JFrame {
         valider.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(nbrJoueur=="1"){
-                    Joueur nouvJ1 = new Joueur(1,j1.getText());
-                    VueJoueur vue = new VueJoueur(nouvJ1, 1);
-
-
-                }
-                else if(nbrJoueur=="2"){
+                if(nbrJoueur=="2"){
                     Joueur nouvJ1 = new Joueur(1,j1.getText());
                     Joueur nouvJ2 = new Joueur(2,j2.getText());
-                    VueJoueur vue = new VueJoueur(nouvJ1,1);
-                    VueJoueur vue2 = new VueJoueur(nouvJ2,2);
+                    Vue vue = new Vue(model);
+                    Vue vue2 = new Vue(model);
+                    dispose();
                 }
                 else if(nbrJoueur=="3"){
                     Joueur nouvJ1 = new Joueur(1,j1.getText());
                     Joueur nouvJ2 = new Joueur(2,j2.getText());
                     Joueur nouvJ3 = new Joueur(3,j3.getText());
-                    VueJoueur vue = new VueJoueur(nouvJ1,1);
-                    VueJoueur vue2 = new VueJoueur(nouvJ2,2);
-                    VueJoueur vue3 = new VueJoueur(nouvJ3,3);
+                    Vue vue = new Vue(model);
+                    Vue vue2 = new Vue(model);
+                    Vue vue3 = new Vue(model);
+                    dispose();
                 }
                 else if(nbrJoueur=="3"){
                     Joueur nouvJ1 = new Joueur(1,j1.getText());
                     Joueur nouvJ2 = new Joueur(2,j2.getText());
                     Joueur nouvJ3 = new Joueur(3,j3.getText());
                     Joueur nouvJ4 = new Joueur(4, j4.getText());
-                    VueJoueur vue = new VueJoueur(nouvJ1,1);
-                    VueJoueur vue2 = new VueJoueur(nouvJ2,2);
-                    VueJoueur vue3 = new VueJoueur(nouvJ3,3);
-                    VueJoueur vue4 = new VueJoueur(nouvJ2,4);
+                    Vue vue = new Vue(model);
+                    Vue vue2 = new Vue(model);
+                    Vue vue3 = new Vue(model);
+                    Vue vue4 = new Vue(model);
+                    dispose();
 
                 }
             }
@@ -115,9 +114,6 @@ public class creationJoueur extends JFrame {
 
         pan.add(valider);
 
-        this.setContentPane(pan);
-
-        setJMenuBar(menuBar);
     }
 
     class ItemState implements ItemListener {

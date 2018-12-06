@@ -31,6 +31,13 @@ public class Vue extends JFrame {
     private Model model;
     private JButton tirerCarte;
 
+    Joueur joueur;
+    JLabel lname1, lname2, lptReputation1, lptReputation2, lptVictoire1, lptVictoire2, liconJoueur;
+    Icon iconJoueur;
+    private JButton augmenterScore = new JButton("Tirer carte");
+    private JButton augmenterRep = new JButton("Augmenter reputation");
+    private JButton laideReputation = new JButton("?");
+
 
 
     public Vue(Model model) {
@@ -317,7 +324,7 @@ public class Vue extends JFrame {
     private void ajouterWigetVersion() {
 
         JPanel ligne_vaisseau = new JPanel();
-        ligne_vaisseau.setLayout(new GridLayout(1,3) );
+        ligne_vaisseau.setLayout(new FlowLayout(FlowLayout.CENTER));
 
         getBoardVaisseauColon().add(getVaisseauColonList().get(0));
         getVaisseauColonList().remove(0);
@@ -353,7 +360,7 @@ public class Vue extends JFrame {
         /*-------------------------------------------------------------------------------------*/
 
         JPanel ligneMars =  new JPanel();
-        ligneMars.setLayout(new GridLayout(1,4));
+        ligneMars.setLayout(new FlowLayout(FlowLayout.CENTER));
 
         getBoardMarsList().add(getCarteMarsList().get(0));
         getCarteMarsList().remove(0);
@@ -374,7 +381,7 @@ public class Vue extends JFrame {
         /*----------------------------------------------------------------------------------------*/
 
         JPanel ligneTerre =  new JPanel();
-        ligneTerre.setLayout(new GridLayout(1,4));
+        ligneTerre.setLayout(new FlowLayout(FlowLayout.CENTER));
 
         getBoardTerreList().add(getCarteTerreList().get(0));
         getCarteTerreList().remove(0);

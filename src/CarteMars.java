@@ -7,13 +7,17 @@ public class CarteMars extends JButton {
     private DeplacementColonMars deplacementColonMars;
     private ActionMars actionMars;
 
+    Toolkit tk = Toolkit.getDefaultToolkit();
+    int xSize = ((int) tk.getScreenSize().getWidth());
+    int ySize = ((int) tk.getScreenSize().getHeight());
+
     public CarteMars(String chemin , ActionMars actionMars, DeplacementColonMars deplacementColonMars, Couleur couleur){
         this.couleur = couleur;
         this.deplacementColonMars = deplacementColonMars;
         this.actionMars = actionMars;
         ImageIcon img = new ImageIcon(chemin);
         this.setIcon(img);
-        setPreferredSize(new Dimension(50,75));
+        setPreferredSize(new Dimension(xSize/5,ySize/15));
     }
 
     public Couleur getCouleur() {

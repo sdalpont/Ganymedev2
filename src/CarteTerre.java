@@ -6,13 +6,17 @@ public class CarteTerre extends JButton {
     private DeplacementColonTerre deplacementColonTerre;
     private Couleur couleur;
 
+    Toolkit tk = Toolkit.getDefaultToolkit();
+    int xSize = ((int) tk.getScreenSize().getWidth());
+    int ySize = ((int) tk.getScreenSize().getHeight());
+
     public CarteTerre(String chemin, ActionTerre actionTerre, DeplacementColonTerre deplacementColonTerre, Couleur couleur){
         this.actionTerre = actionTerre;
         this.deplacementColonTerre = deplacementColonTerre;
         this.couleur = couleur;
         ImageIcon img = new ImageIcon(chemin);
         this.setIcon(img);
-        setPreferredSize(new Dimension(50,75));
+        setPreferredSize(new Dimension(xSize/5,ySize/15));
     }
 
 
