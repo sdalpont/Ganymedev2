@@ -35,6 +35,9 @@ public class Vue extends JFrame {
     private JOptionPane Mars;
     private JOptionPane VaisseauColon;
 
+    private CarteVaisseauColon carteVaisseauColon1;
+    private CarteVaisseauColon carteVaisseauColon2;
+
 
 
     Joueur joueur;
@@ -423,18 +426,18 @@ public class Vue extends JFrame {
         mars.setPreferredSize(new Dimension(100,150));
         JButton terre = new JButton("terre");
        terre.setPreferredSize(new Dimension(100,150));
-        JButton vaiseauColon1 = new JButton("Vaisseau colon");
-        vaiseauColon1.setPreferredSize(new Dimension(100,150));
-        JButton vaiseauColon2 = new JButton("Vaisseau colon");
-        vaiseauColon2.setPreferredSize(new Dimension(100,150));
+        carteVaisseauColon1 = new CarteVaisseauColon(null,null);
+        carteVaisseauColon1.setPreferredSize(new Dimension(100,150));
+        carteVaisseauColon2 = new CarteVaisseauColon(null,null);
+        carteVaisseauColon2.setPreferredSize(new Dimension(100,150));
 
         JPanel plateau = new JPanel();
         plateau.add(colonGrid);
 
         plateau.add(mars);
         plateau.add(terre);
-        plateau.add(vaiseauColon1);
-        plateau.add(vaiseauColon2);
+        plateau.add(carteVaisseauColon1);
+        plateau.add(carteVaisseauColon2);
 
         /*----------------------------------------------------------------------------------------*/
 
@@ -652,5 +655,21 @@ public class Vue extends JFrame {
 
     public void setVaisseauColon(JOptionPane vaisseauColon) {
         VaisseauColon = vaisseauColon;
+    }
+
+    public void setCarteVaisseauColon1(CarteVaisseauColon carteVaisseauColon1) {
+        this.carteVaisseauColon1 = carteVaisseauColon1;
+    }
+
+    public CarteVaisseauColon getCarteVaisseauColon1() {
+        return carteVaisseauColon1;
+    }
+
+    public CarteVaisseauColon getCarteVaisseauColon2() {
+        return carteVaisseauColon2;
+    }
+
+    public void setCarteVaisseauColon2(CarteVaisseauColon carteVaisseauColon2) {
+        this.carteVaisseauColon2 = carteVaisseauColon2;
     }
 }
