@@ -1,5 +1,4 @@
 import javax.swing.*;
-import javax.tools.Tool;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -8,10 +7,10 @@ import java.util.List;
 
 public class Vue extends JFrame {
 
-    private List<CarteVaisseauColon> vaisseauColonList;
-    private List<CarteVaisseauColon> mainVaisseauColon;
-    private List<CarteVaisseauColon> boardVaisseauColon;
-    private List<CarteVaisseauColon> defausseVaisseauColon;
+    private List<CarteVaisseauColon> carteVaisseauColonList;
+    private List<CarteVaisseauColon> mainVaisseauColonList;
+    private List<CarteVaisseauColon> boardVaisseauColonList;
+    private List<CarteVaisseauColon> defausseVaisseauColonList;
 
     private List<TuileColon> tuileColonList;
     private List<TuileColon> mainTuileColon;
@@ -34,6 +33,7 @@ public class Vue extends JFrame {
 
     private JOptionPane Terre;
     private JOptionPane Mars;
+    private JOptionPane VaisseauColon;
 
 
 
@@ -49,10 +49,10 @@ public class Vue extends JFrame {
     public Vue(Model model) {
 
         this.model = model;
-        vaisseauColonList = new ArrayList<>();
-        mainVaisseauColon = new ArrayList<>();
-        defausseVaisseauColon = new ArrayList<>();
-        boardVaisseauColon = new ArrayList<>();
+        carteVaisseauColonList = new ArrayList<>();
+        mainVaisseauColonList = new ArrayList<>();
+        defausseVaisseauColonList = new ArrayList<>();
+        boardVaisseauColonList = new ArrayList<>();
 
         tuileColonList = new ArrayList<>();
         mainTuileColon = new ArrayList<>();
@@ -101,23 +101,23 @@ public class Vue extends JFrame {
             CarteVaisseauColon carte14 = new CarteVaisseauColon("src/img/navette/1PV_par_symbole_colon_bleu.png", Effet.un_pv_bleu_navtte);
             CarteVaisseauColon carte15 = new CarteVaisseauColon("src/img/navette/1PV_par_symbole_colon_violet.png", Effet.un_pv_violet_navtte);
             CarteVaisseauColon carte16 = new CarteVaisseauColon("src/img/navette/2PV_par_tuile.png", Effet.deux_pv_par_tuile_posseder_fin_partie);
-            vaisseauColonList.add(carte1);
-            vaisseauColonList.add(carte2);
-            vaisseauColonList.add(carte3);
-            vaisseauColonList.add(carte4);
-            vaisseauColonList.add(carte5);
-            vaisseauColonList.add(carte6);
-            vaisseauColonList.add(carte7);
-            vaisseauColonList.add(carte8);
-            vaisseauColonList.add(carte9);
-            vaisseauColonList.add(carte10);
-            vaisseauColonList.add(carte11);
-            vaisseauColonList.add(carte12);
-            vaisseauColonList.add(carte13);
-            vaisseauColonList.add(carte14);
-            vaisseauColonList.add(carte15);
-            vaisseauColonList.add(carte16);
-            Collections.shuffle(vaisseauColonList);
+            carteVaisseauColonList.add(carte1);
+            carteVaisseauColonList.add(carte2);
+            carteVaisseauColonList.add(carte3);
+            carteVaisseauColonList.add(carte4);
+            carteVaisseauColonList.add(carte5);
+            carteVaisseauColonList.add(carte6);
+            carteVaisseauColonList.add(carte7);
+            carteVaisseauColonList.add(carte8);
+            carteVaisseauColonList.add(carte9);
+            carteVaisseauColonList.add(carte10);
+            carteVaisseauColonList.add(carte11);
+            carteVaisseauColonList.add(carte12);
+            carteVaisseauColonList.add(carte13);
+            carteVaisseauColonList.add(carte14);
+            carteVaisseauColonList.add(carte15);
+            carteVaisseauColonList.add(carte16);
+            Collections.shuffle(carteVaisseauColonList);
         }
 
         for (int j = 0; j < 2 ; j++){
@@ -332,17 +332,17 @@ public class Vue extends JFrame {
         JPanel ligne_vaisseau = new JPanel();
         ligne_vaisseau.setLayout(new FlowLayout(FlowLayout.CENTER));
 
-        getBoardVaisseauColon().add(getVaisseauColonList().get(0));
-        getVaisseauColonList().remove(0);
-        ligne_vaisseau.add(getBoardVaisseauColon().get(0));
+        getBoardVaisseauColonList().add(getCarteVaisseauColonList().get(0));
+        getCarteVaisseauColonList().remove(0);
+        ligne_vaisseau.add(getBoardVaisseauColonList().get(0));
 
-        getBoardVaisseauColon().add(getVaisseauColonList().get(0));
-        getVaisseauColonList().remove(0);
-        ligne_vaisseau.add(getBoardVaisseauColon().get(1));
+        getBoardVaisseauColonList().add(getCarteVaisseauColonList().get(0));
+        getCarteVaisseauColonList().remove(0);
+        ligne_vaisseau.add(getBoardVaisseauColonList().get(1));
 
-        getBoardVaisseauColon().add(getVaisseauColonList().get(0));
-        getVaisseauColonList().remove(0);
-        ligne_vaisseau.add(getBoardVaisseauColon().get(2));
+        getBoardVaisseauColonList().add(getCarteVaisseauColonList().get(0));
+        getCarteVaisseauColonList().remove(0);
+        ligne_vaisseau.add(getBoardVaisseauColonList().get(2));
         /*------------------------------------------------------------------------------------*/
         JPanel ligneTuile =  new JPanel();
         ligneTuile.setLayout(new GridLayout(1,4));
@@ -463,7 +463,7 @@ public class Vue extends JFrame {
     }
 
     public  void setButtonController(ActionListener listener){
-        for (CarteVaisseauColon carte: getBoardVaisseauColon()) {
+        for (CarteVaisseauColon carte: getBoardVaisseauColonList()) {
             carte.addActionListener(listener);
         }
     }
@@ -501,12 +501,23 @@ public class Vue extends JFrame {
 
     }
 
-    /*---------------------Getter-Setter----------------------------*/
-    public List<CarteVaisseauColon> getVaisseauColonList() {
-        return vaisseauColonList;
+
+    public void  creerDialogInfVaisseauColon(String messageInf) {
+        setMars( new JOptionPane());
+        getMars();
+        JOptionPane.showMessageDialog( null,messageInf, "information",
+                JOptionPane.INFORMATION_MESSAGE );
+
     }
-    public void setVaisseauColonList(List<CarteVaisseauColon> vaisseauColonList) {
-        this.vaisseauColonList = vaisseauColonList;
+
+
+
+    /*---------------------Getter-Setter----------------------------*/
+    public List<CarteVaisseauColon> getCarteVaisseauColonList() {
+        return carteVaisseauColonList;
+    }
+    public void setCarteVaisseauColonList(List<CarteVaisseauColon> vaisseauColonList) {
+        this.carteVaisseauColonList = vaisseauColonList;
     }
     public Model getModel() {
         return model;
@@ -520,24 +531,24 @@ public class Vue extends JFrame {
     public void setTirerCarte(JButton tirerCarte) {
         this.tirerCarte = tirerCarte;
     }
-    public List<CarteVaisseauColon> getMainVaisseauColon() {
-        return mainVaisseauColon;
+    public List<CarteVaisseauColon> getMainVaisseauColonList() {
+        return mainVaisseauColonList;
     }
 
-    public void setMainVaisseauColon(List<CarteVaisseauColon> mainVaisseauColon) {
-        this.mainVaisseauColon = mainVaisseauColon;
+    public void setMainVaisseauColonList(List<CarteVaisseauColon> mainVaisseauColonList) {
+        this.mainVaisseauColonList = mainVaisseauColonList;
     }
-    public List<CarteVaisseauColon> getDefausseVaisseauColon() {
-        return defausseVaisseauColon;
+    public List<CarteVaisseauColon> getDefausseVaisseauColonList() {
+        return defausseVaisseauColonList;
     }
-    public void setDefausseVaisseauColon(List<CarteVaisseauColon> defausseVaisseauColon) {
-        this.defausseVaisseauColon = defausseVaisseauColon;
+    public void setDefausseVaisseauColonList(List<CarteVaisseauColon> defausseVaisseauColonList) {
+        this.defausseVaisseauColonList = defausseVaisseauColonList;
     }
-    public List<CarteVaisseauColon> getBoardVaisseauColon() {
-        return boardVaisseauColon;
+    public List<CarteVaisseauColon> getBoardVaisseauColonList() {
+        return boardVaisseauColonList;
     }
-    public void setBoardVaisseauColon(List<CarteVaisseauColon> boardVaisseauColon) {
-        this.boardVaisseauColon = boardVaisseauColon;
+    public void setBoardVaisseauColonList(List<CarteVaisseauColon> boardVaisseauColonList) {
+        this.boardVaisseauColonList = boardVaisseauColonList;
     }
 
     public List<TuileColon> getTuileColonList() {
@@ -634,5 +645,12 @@ public class Vue extends JFrame {
 
     public void setMars(JOptionPane mars) {
         Mars = mars;
+    }
+    public JOptionPane getVaisseauColon() {
+        return VaisseauColon;
+    }
+
+    public void setVaisseauColon(JOptionPane vaisseauColon) {
+        VaisseauColon = vaisseauColon;
     }
 }
