@@ -85,6 +85,12 @@ public class CreationJoueur extends JFrame {
                     ControlTerre terre1 = new ControlTerre(model,vue2);
                     ControlMars mars = new ControlMars(model,vue);
                     ControlMars mars1 = new ControlMars(model,vue2);
+                    Control1TuileColon tuile = new Control1TuileColon(model,vue);
+                    Control1TuileColon tuile2 = new Control1TuileColon(model,vue2);
+                    Control1VaisseauColon control1VaisseauColon = new Control1VaisseauColon(model,vue);
+                    Control1VaisseauColon control1VaisseauColon2 = new Control1VaisseauColon(model,vue2);
+
+
 
                 }
                 else if(nbrJoueur=="3"){
@@ -99,6 +105,11 @@ public class CreationJoueur extends JFrame {
                     ControlTerre terre1 = new ControlTerre(model,vue2);
                     ControlMars mars = new ControlMars(model,vue);
                     ControlMars mars1 = new ControlMars(model,vue2);
+
+                    Control1TuileColon tuile = new Control1TuileColon(model,vue);
+                    Control1TuileColon tuile2 = new Control1TuileColon(model,vue2);
+                    Control1VaisseauColon control1VaisseauColon = new Control1VaisseauColon(model,vue);
+                    Control1VaisseauColon control1VaisseauColon2 = new Control1VaisseauColon(model,vue2);
 
                 }
                 else if(nbrJoueur=="3"){
@@ -115,6 +126,11 @@ public class CreationJoueur extends JFrame {
                     ControlTerre terre1 = new ControlTerre(model,vue2);
                     ControlMars mars = new ControlMars(model,vue);
                     ControlMars mars1 = new ControlMars(model,vue2);
+
+                    Control1TuileColon tuile = new Control1TuileColon(model,vue);
+                    Control1TuileColon tuile2 = new Control1TuileColon(model,vue2);
+                    Control1VaisseauColon control1VaisseauColon = new Control1VaisseauColon(model,vue);
+                    Control1VaisseauColon control1VaisseauColon2 = new Control1VaisseauColon(model,vue2);
 
                 }
                 dispose();
