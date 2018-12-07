@@ -10,7 +10,7 @@ public class Control1TuileColon extends Control1 implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == vue.getBoardTuileColon().get(0)) {
+        if (e.getSource() == vue.getBoardTuileColon().get(0) && vue.getMainTuileColon().size() < 3) {
             vue.getMainTuileColon().add(vue.getBoardTuileColon().get(0));
             TuileColon tuile1 = vue.getBoardTuileColon().get(0);
             vue.getTuileColonList().remove(0);
@@ -18,7 +18,7 @@ public class Control1TuileColon extends Control1 implements ActionListener {
             tuile1.setEffetTuile(vue.getTuileColonList().get(0).getEffetTuile());
         }
 
-        else if (e.getSource() == vue.getBoardTuileColon().get(1)) {
+        else if (e.getSource() == vue.getBoardTuileColon().get(1)&& vue.getMainTuileColon().size() < 3) {
             vue.getMainTuileColon().add(vue.getBoardTuileColon().get(1));
             TuileColon tuile1 = vue.getBoardTuileColon().get(1);
             vue.getTuileColonList().remove(0);
@@ -27,7 +27,7 @@ public class Control1TuileColon extends Control1 implements ActionListener {
         }
 
 
-        else if (e.getSource() == vue.getBoardTuileColon().get(2)) {
+        else if (e.getSource() == vue.getBoardTuileColon().get(2)&& vue.getMainTuileColon().size() < 3) {
             vue.getMainTuileColon().add(vue.getBoardTuileColon().get(2));
             TuileColon tuile1 = vue.getBoardTuileColon().get(2);
             vue.getTuileColonList().remove(0);
@@ -35,12 +35,15 @@ public class Control1TuileColon extends Control1 implements ActionListener {
             tuile1.setEffetTuile(vue.getTuileColonList().get(0).getEffetTuile());
         }
 
-        else if (e.getSource() == vue.getBoardTuileColon().get(3)) {
+        else if (e.getSource() == vue.getBoardTuileColon().get(3)&& vue.getMainTuileColon().size() < 3) {
             vue.getMainTuileColon().add(vue.getBoardTuileColon().get(3));
             TuileColon tuile1 = vue.getBoardTuileColon().get(3);
             vue.getTuileColonList().remove(0);
             tuile1.setIcon(vue.getTuileColonList().get(0).getIcon());
             tuile1.setEffetTuile(vue.getTuileColonList().get(0).getEffetTuile());
+        }
+        else{
+            System.out.println("Indication : Vous ne pouvez plus prendre de Tile colon vous devez defausser une carte pour en repiocher");
         }
     }
 }

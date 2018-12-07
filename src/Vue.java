@@ -31,6 +31,12 @@ public class Vue extends JFrame {
     private Model model;
     private JButton tirerCarte;
 
+
+    private JOptionPane Terre;
+    private JOptionPane Mars;
+
+
+
     Joueur joueur;
     JLabel lname1, lname2, lptReputation1, lptReputation2, lptVictoire1, lptVictoire2, liconJoueur;
     Icon iconJoueur;
@@ -478,6 +484,23 @@ public class Vue extends JFrame {
         }
     }
 
+    public void  creerDialogInfMars(String messageInf) {
+        setMars( new JOptionPane());
+        getMars();
+        JOptionPane.showMessageDialog( null,messageInf, "information",
+                JOptionPane.INFORMATION_MESSAGE );
+
+    }
+
+
+    public void  creerDialogInfTerre(String messageInf) {
+        setTerre( new JOptionPane());
+        getTerre();
+        JOptionPane.showMessageDialog( null,messageInf, "information",
+                JOptionPane.INFORMATION_MESSAGE );
+
+    }
+
     /*---------------------Getter-Setter----------------------------*/
     public List<CarteVaisseauColon> getVaisseauColonList() {
         return vaisseauColonList;
@@ -595,5 +618,21 @@ public class Vue extends JFrame {
 
     public void setDeffauseTerreList(List<CarteTerre> deffauseTerreList) {
         this.deffauseTerreList = deffauseTerreList;
+    }
+
+    public JOptionPane getTerre() {
+        return Terre;
+    }
+
+    public void setTerre(JOptionPane terre) {
+        Terre = terre;
+    }
+
+    public JOptionPane getMars() {
+        return Mars;
+    }
+
+    public void setMars(JOptionPane mars) {
+        Mars = mars;
     }
 }

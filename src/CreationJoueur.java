@@ -81,6 +81,11 @@ public class CreationJoueur extends JFrame {
                     Joueur nouvJ2 = new Joueur(2,j2.getText());
                     Vue vue = new Vue(model);
                     Vue vue2 = new Vue(model);
+                    ControlTerre terre = new ControlTerre(model,vue);
+                    ControlTerre terre1 = new ControlTerre(model,vue2);
+                    ControlMars mars = new ControlMars(model,vue);
+                    ControlMars mars1 = new ControlMars(model,vue2);
+
                 }
                 else if(nbrJoueur=="3"){
                     Joueur nouvJ1 = new Joueur(1,j1.getText());
@@ -89,6 +94,12 @@ public class CreationJoueur extends JFrame {
                     Vue vue = new Vue(model);
                     Vue vue2 = new Vue(model);
                     Vue vue3 = new Vue(model);
+
+                    ControlTerre terre = new ControlTerre(model,vue);
+                    ControlTerre terre1 = new ControlTerre(model,vue2);
+                    ControlMars mars = new ControlMars(model,vue);
+                    ControlMars mars1 = new ControlMars(model,vue2);
+
                 }
                 else if(nbrJoueur=="3"){
                     Joueur nouvJ1 = new Joueur(1,j1.getText());
@@ -99,6 +110,11 @@ public class CreationJoueur extends JFrame {
                     Vue vue2 = new Vue(model);
                     Vue vue3 = new Vue(model);
                     Vue vue4 = new Vue(model);
+
+                    ControlTerre terre = new ControlTerre(model,vue);
+                    ControlTerre terre1 = new ControlTerre(model,vue2);
+                    ControlMars mars = new ControlMars(model,vue);
+                    ControlMars mars1 = new ControlMars(model,vue2);
 
                 }
                 dispose();
