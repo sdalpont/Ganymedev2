@@ -25,10 +25,16 @@ public class VuePlateauJoueur extends JFrame {
         pack();
         setTitle("Plateau de "+joueur.getName());
         Toolkit tk = Toolkit.getDefaultToolkit();
-        int xSize = (int)(tk.getScreenSize().getWidth());
+        int xSize = (int)(tk.getScreenSize().getWidth()/2);
         int ySize = (int)(tk.getScreenSize().getHeight()/2);
-        setSize(xSize,ySize);
-        setLocation(0,ySize);
+        setSize(xSize,ySize/2);
+        switch (joueur.getId()){
+            case 1 : setLocation(0,ySize); break;
+            case 2 : setLocation(xSize,ySize); break;
+            case 3 : setLocation(0,ySize+ySize/2); break;
+            case 4 : setLocation(xSize,ySize+ySize/2); break;
+            default: setLocation(0,0); break;
+        }
         setVisible(true);                                 // Affiche la fenetre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Gestion de la fermeture
     }
