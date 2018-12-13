@@ -59,10 +59,10 @@ public class Joueur{
     public Color getCouleurJoueur(int id) {
         switch (id){
             /*jaune rouge bleu vert*/
-            case 0 : couleurJoueur = Color.YELLOW; break;
-            case 1 : couleurJoueur = Color.RED; break;
-            case 2 : couleurJoueur = Color.BLUE; break;
-            case 3 : couleurJoueur = Color.GREEN; break;
+            case 1 : couleurJoueur = Color.YELLOW; break;
+            case 2: couleurJoueur = Color.RED; break;
+            case 3 : couleurJoueur = Color.BLUE; break;
+            case 4 : couleurJoueur = Color.GREEN; break;
             default: couleurJoueur = Color.BLACK;break;
         }
         return couleurJoueur;

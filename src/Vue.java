@@ -80,7 +80,7 @@ public class Vue extends JFrame {
         int xSize = (int)(tk.getScreenSize().getWidth());
         int ySize = (int)(tk.getScreenSize().getHeight()/2);
         setSize(xSize,ySize);
-        setVisible(true);                                 // Affiche la fenetre
+//        setVisible(true);                                 // Affiche la fenetre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Gestion de la fermeture
     }
 

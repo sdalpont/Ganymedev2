@@ -11,12 +11,19 @@ public class VuePlateauJoueur extends JFrame {
     private CarteVaisseauColon carteVaisseauColon2;
 //    Vue vue;
 
-    protected VuePlateauJoueur(){
+//    Joueur joueur;
+    JLabel lname1, lname2, lptReputation1, lptReputation2, lptVictoire1, lptVictoire2, liconJoueur;
+    Icon iconJoueur;
+    private JButton augmenterScore = new JButton("Tirer carte");
+    private JButton augmenterRep = new JButton("Augmenter reputation");
+    private JButton laideReputation = new JButton("?");
 
-        creerWidget();
+    protected VuePlateauJoueur(Joueur joueur){
+
+        creerWidget(joueur);
         ajouterWigetVersion();
         pack();
-        setTitle("Plateau Joueur");
+        setTitle("Plateau de "+joueur.getName());
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xSize = (int)(tk.getScreenSize().getWidth());
         int ySize = (int)(tk.getScreenSize().getHeight()/2);
@@ -26,7 +33,18 @@ public class VuePlateauJoueur extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Gestion de la fermeture
     }
 
-    private void creerWidget() {}
+    private void creerWidget(Joueur joueur) {
+        lname1 = new JLabel("Nom : ");
+        lptReputation1 = new JLabel("Points de Réputation : ");
+        lptVictoire1 = new JLabel("Points de Victoire : ");
+
+        lname2 = new JLabel(String.valueOf(joueur.getName()));
+        lptReputation2 = new JLabel(String.valueOf(joueur.getPointDeReputation()));
+        lptVictoire2 = new JLabel(String.valueOf(joueur.getPointDeVictoires()));
+
+        liconJoueur = new JLabel("Joueur "+joueur.getId());
+        liconJoueur.setForeground(joueur.getCouleurJoueur(joueur.getId()));
+    }
 
     private void ajouterWigetVersion() {
         JButton colon = new JButton();
@@ -58,8 +76,31 @@ public class VuePlateauJoueur extends JFrame {
         plateau.add(carteVaisseauColon1);
         plateau.add(carteVaisseauColon2);
 
+        JPanel pName = new JPanel();
+        pName.add(lname1);
+        pName.add(lname2);
+
+        JPanel pPtReputation = new JPanel();
+        pPtReputation.add(lptReputation1);
+        pPtReputation.add(lptReputation2);
+
+        JPanel pPtVictoire= new JPanel();
+        pPtVictoire.add(lptVictoire1);
+        pPtVictoire.add(lptVictoire2);
+
+        JPanel pIconJoueur = new JPanel();
+        pIconJoueur.add(liconJoueur);
+
+        JPanel pAffichageJoueur = new JPanel();
+        pAffichageJoueur.setLayout(new BoxLayout(pAffichageJoueur,BoxLayout.Y_AXIS));
+        pAffichageJoueur.add(pIconJoueur);
+        pAffichageJoueur.add(pName);
+        pAffichageJoueur.add(pPtReputation);
+        pAffichageJoueur.add(pPtVictoire);
+
         JPanel panAll = new JPanel();
         panAll.setPreferredSize(new Dimension(500,600));
+        panAll.add(pAffichageJoueur);
         panAll.add(plateau);
         setContentPane(panAll);
     }

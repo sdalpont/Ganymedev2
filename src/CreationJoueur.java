@@ -17,12 +17,14 @@ public class CreationJoueur extends JFrame {
     JTextArea j4 = new JTextArea(2,25);
 
     Model model = new Model();
+    Vue vue = new Vue(model);
 
     private JButton valider = new JButton("Valider");
 
     private Menu menu = new Menu();
 
     public CreationJoueur(String nbrJoueur){
+        vue.setVisible(false);
         CardLayout cardL = new CardLayout();
         JPanel content = new JPanel();
         setSize(400,300);
@@ -77,63 +79,86 @@ public class CreationJoueur extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(nbrJoueur=="2"){
+                    vue.setVisible(true);
                     Joueur nouvJ1 = new Joueur(1,j1.getText());
                     Joueur nouvJ2 = new Joueur(2,j2.getText());
-                    Vue vue = new Vue(model);
-                    VuePlateauJoueur vuePlateauJoueur1 = new VuePlateauJoueur();
-                    VuePlateauJoueur vuePlateauJoueur2 = new VuePlateauJoueur();
+
+                    VuePlateauJoueur vuePlateauJoueur1 = new VuePlateauJoueur(nouvJ1);
+                    VuePlateauJoueur vuePlateauJoueur2 = new VuePlateauJoueur(nouvJ2);
+
                     ControlTerre terre = new ControlTerre(model,vue,vuePlateauJoueur1);
                     ControlTerre terre1 = new ControlTerre(model,vue,vuePlateauJoueur2);
+
                     ControlMars mars = new ControlMars(model,vue,vuePlateauJoueur1);
                     ControlMars mars1 = new ControlMars(model,vue,vuePlateauJoueur2);
+
                     Control1TuileColon tuile = new Control1TuileColon(model,vue,vuePlateauJoueur1);
                     Control1TuileColon tuile2 = new Control1TuileColon(model,vue,vuePlateauJoueur2);
+
                     Control1VaisseauColon control1VaisseauColon = new Control1VaisseauColon(model,vue,vuePlateauJoueur1);
                     Control1VaisseauColon control1VaisseauColon2 = new Control1VaisseauColon(model,vue,vuePlateauJoueur2);
 
-
-
-                }/*
-                else if(nbrJoueur=="3"){
-                    Joueur nouvJ1 = new Joueur(1,j1.getText());
-                    Joueur nouvJ2 = new Joueur(2,j2.getText());
-                    Joueur nouvJ3 = new Joueur(3,j3.getText());
-                    Vue vue = new Vue(model);
-                    Vue vue2 = new Vue(model);
-                    Vue vue3 = new Vue(model);
-
-                    ControlTerre terre = new ControlTerre(model,vue,v);
-                    ControlTerre terre1 = new ControlTerre(model,vue2);
-                    ControlMars mars = new ControlMars(model,vue);
-                    ControlMars mars1 = new ControlMars(model,vue2);
-
-                    Control1TuileColon tuile = new Control1TuileColon(model,vue);
-                    Control1TuileColon tuile2 = new Control1TuileColon(model,vue2);
-                    Control1VaisseauColon control1VaisseauColon = new Control1VaisseauColon(model,vue);
-                    Control1VaisseauColon control1VaisseauColon2 = new Control1VaisseauColon(model,vue2);
-
                 }
                 else if(nbrJoueur=="3"){
+                    vue.setVisible(true);
                     Joueur nouvJ1 = new Joueur(1,j1.getText());
                     Joueur nouvJ2 = new Joueur(2,j2.getText());
                     Joueur nouvJ3 = new Joueur(3,j3.getText());
-                    Joueur nouvJ4 = new Joueur(4, j4.getText());
-                    Vue vue = new Vue(model);
-                    Vue vue2 = new Vue(model);
-                    Vue vue3 = new Vue(model);
-                    Vue vue4 = new Vue(model);
 
-                    ControlTerre terre = new ControlTerre(model,vue);
-                    ControlTerre terre1 = new ControlTerre(model,vue2);
-                    ControlMars mars = new ControlMars(model,vue);
-                    ControlMars mars1 = new ControlMars(model,vue2);
+                    VuePlateauJoueur vuePlateauJoueur1 = new VuePlateauJoueur(nouvJ1);
+                    VuePlateauJoueur vuePlateauJoueur2 = new VuePlateauJoueur(nouvJ2);
+                    VuePlateauJoueur vuePlateauJoueur3 = new VuePlateauJoueur(nouvJ3);
 
-                    Control1TuileColon tuile = new Control1TuileColon(model,vue);
-                    Control1TuileColon tuile2 = new Control1TuileColon(model,vue2);
-                    Control1VaisseauColon control1VaisseauColon = new Control1VaisseauColon(model,vue);
-                    Control1VaisseauColon control1VaisseauColon2 = new Control1VaisseauColon(model,vue2);
+                    ControlTerre terre1 = new ControlTerre(model,vue,vuePlateauJoueur1);
+                    ControlTerre terre2 = new ControlTerre(model,vue,vuePlateauJoueur2);
+                    ControlTerre terre3 = new ControlTerre(model,vue,vuePlateauJoueur3);
 
-                }*/
+                    ControlMars mars1 = new ControlMars(model,vue,vuePlateauJoueur1);
+                    ControlMars mars2 = new ControlMars(model,vue,vuePlateauJoueur2);
+                    ControlMars mars3 = new ControlMars(model,vue,vuePlateauJoueur3);
+
+                    Control1TuileColon tuile1 = new Control1TuileColon(model,vue,vuePlateauJoueur1);
+                    Control1TuileColon tuile2 = new Control1TuileColon(model,vue,vuePlateauJoueur2);
+                    Control1TuileColon tuile3 = new Control1TuileColon(model,vue,vuePlateauJoueur3);
+
+                    Control1VaisseauColon control1VaisseauColon1 = new Control1VaisseauColon(model,vue,vuePlateauJoueur1);
+                    Control1VaisseauColon control1VaisseauColon2 = new Control1VaisseauColon(model,vue,vuePlateauJoueur2);
+                    Control1VaisseauColon control1VaisseauColon3 = new Control1VaisseauColon(model,vue,vuePlateauJoueur3);
+
+                }
+                else if(nbrJoueur=="4"){
+                    vue.setVisible(true);
+                    Joueur nouvJ1 = new Joueur(1,j1.getText());
+                    Joueur nouvJ2 = new Joueur(2,j2.getText());
+                    Joueur nouvJ3 = new Joueur(3,j3.getText());
+                    Joueur nouvJ4 = new Joueur(4,j4.getText());
+
+                    VuePlateauJoueur vuePlateauJoueur1 = new VuePlateauJoueur(nouvJ1);
+                    VuePlateauJoueur vuePlateauJoueur2 = new VuePlateauJoueur(nouvJ2);
+                    VuePlateauJoueur vuePlateauJoueur3 = new VuePlateauJoueur(nouvJ3);
+                    VuePlateauJoueur vuePlateauJoueur4 = new VuePlateauJoueur(nouvJ4);
+
+                    ControlTerre terre1 = new ControlTerre(model,vue,vuePlateauJoueur1);
+                    ControlTerre terre2 = new ControlTerre(model,vue,vuePlateauJoueur2);
+                    ControlTerre terre3 = new ControlTerre(model,vue,vuePlateauJoueur3);
+                    ControlTerre terre4 = new ControlTerre(model,vue,vuePlateauJoueur4);
+
+                    ControlMars mars1 = new ControlMars(model,vue,vuePlateauJoueur1);
+                    ControlMars mars2 = new ControlMars(model,vue,vuePlateauJoueur2);
+                    ControlMars mars3 = new ControlMars(model,vue,vuePlateauJoueur3);
+                    ControlMars mars4 = new ControlMars(model,vue,vuePlateauJoueur4);
+
+                    Control1TuileColon tuile1 = new Control1TuileColon(model,vue,vuePlateauJoueur1);
+                    Control1TuileColon tuile2 = new Control1TuileColon(model,vue,vuePlateauJoueur2);
+                    Control1TuileColon tuile3 = new Control1TuileColon(model,vue,vuePlateauJoueur3);
+                    Control1TuileColon tuile4 = new Control1TuileColon(model,vue,vuePlateauJoueur4);
+
+                    Control1VaisseauColon control1VaisseauColon1 = new Control1VaisseauColon(model,vue,vuePlateauJoueur1);
+                    Control1VaisseauColon control1VaisseauColon2 = new Control1VaisseauColon(model,vue,vuePlateauJoueur2);
+                    Control1VaisseauColon control1VaisseauColon3 = new Control1VaisseauColon(model,vue,vuePlateauJoueur3);
+                    Control1VaisseauColon control1VaisseauColon4 = new Control1VaisseauColon(model,vue,vuePlateauJoueur4);
+
+                }
                 dispose();
             }
         });
