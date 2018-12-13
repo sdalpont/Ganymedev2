@@ -4,8 +4,8 @@ import java.awt.event.ActionListener;
 public class ControlMars extends Control1 implements ActionListener {
 
 
-    public ControlMars(Model model, Vue vue){
-        super(model,vue);
+    public ControlMars(Model model, Vue vue, VuePlateauJoueur vuePlateauJoueur){
+        super(model,vue,vuePlateauJoueur);
         vue.setButtonController2(this);
     }
 

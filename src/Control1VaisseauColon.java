@@ -5,9 +5,10 @@ public class Control1VaisseauColon extends Control1 implements ActionListener {
     boolean vaisseau1EstNull = true;
     boolean vaisseau2EstNull = true;
 
-    public Control1VaisseauColon(Model model, Vue vue) {
-        super(model, vue);
+    public Control1VaisseauColon(Model model, Vue vue, VuePlateauJoueur vuePlateauJoueur) {
+        super(model, vue, vuePlateauJoueur);
         vue.setButtonController(this);
+//        vuePlateauJoueur.setButtonController(this);
     }
 
     @Override
@@ -110,8 +111,8 @@ public class Control1VaisseauColon extends Control1 implements ActionListener {
 
     private void placementDesVaisseauSurLePlateauJoueur(int i) {
 
-        CarteVaisseauColon vaisseauColon1Joueur = vue.getCarteVaisseauColon1();
-        CarteVaisseauColon vaisseauColon2Joueur = vue.getCarteVaisseauColon2();
+        CarteVaisseauColon vaisseauColon1Joueur = vuePlateauJoueur.getCarteVaisseauColon1();
+        CarteVaisseauColon vaisseauColon2Joueur = vuePlateauJoueur.getCarteVaisseauColon2();
         if (vaisseau1EstNull) {
             vaisseau1EstNull = false;
             vaisseauColon1Joueur.setIcon(vue.getBoardVaisseauColonList().get(i).getIcon());

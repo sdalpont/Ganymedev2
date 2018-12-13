@@ -80,19 +80,20 @@ public class CreationJoueur extends JFrame {
                     Joueur nouvJ1 = new Joueur(1,j1.getText());
                     Joueur nouvJ2 = new Joueur(2,j2.getText());
                     Vue vue = new Vue(model);
-                    Vue vue2 = new Vue(model);
-                    ControlTerre terre = new ControlTerre(model,vue);
-                    ControlTerre terre1 = new ControlTerre(model,vue2);
-                    ControlMars mars = new ControlMars(model,vue);
-                    ControlMars mars1 = new ControlMars(model,vue2);
-                    Control1TuileColon tuile = new Control1TuileColon(model,vue);
-                    Control1TuileColon tuile2 = new Control1TuileColon(model,vue2);
-                    Control1VaisseauColon control1VaisseauColon = new Control1VaisseauColon(model,vue);
-                    Control1VaisseauColon control1VaisseauColon2 = new Control1VaisseauColon(model,vue2);
+                    VuePlateauJoueur vuePlateauJoueur1 = new VuePlateauJoueur();
+                    VuePlateauJoueur vuePlateauJoueur2 = new VuePlateauJoueur();
+                    ControlTerre terre = new ControlTerre(model,vue,vuePlateauJoueur1);
+                    ControlTerre terre1 = new ControlTerre(model,vue,vuePlateauJoueur2);
+                    ControlMars mars = new ControlMars(model,vue,vuePlateauJoueur1);
+                    ControlMars mars1 = new ControlMars(model,vue,vuePlateauJoueur2);
+                    Control1TuileColon tuile = new Control1TuileColon(model,vue,vuePlateauJoueur1);
+                    Control1TuileColon tuile2 = new Control1TuileColon(model,vue,vuePlateauJoueur2);
+                    Control1VaisseauColon control1VaisseauColon = new Control1VaisseauColon(model,vue,vuePlateauJoueur1);
+                    Control1VaisseauColon control1VaisseauColon2 = new Control1VaisseauColon(model,vue,vuePlateauJoueur2);
 
 
 
-                }
+                }/*
                 else if(nbrJoueur=="3"){
                     Joueur nouvJ1 = new Joueur(1,j1.getText());
                     Joueur nouvJ2 = new Joueur(2,j2.getText());
@@ -101,7 +102,7 @@ public class CreationJoueur extends JFrame {
                     Vue vue2 = new Vue(model);
                     Vue vue3 = new Vue(model);
 
-                    ControlTerre terre = new ControlTerre(model,vue);
+                    ControlTerre terre = new ControlTerre(model,vue,v);
                     ControlTerre terre1 = new ControlTerre(model,vue2);
                     ControlMars mars = new ControlMars(model,vue);
                     ControlMars mars1 = new ControlMars(model,vue2);
@@ -132,7 +133,7 @@ public class CreationJoueur extends JFrame {
                     Control1VaisseauColon control1VaisseauColon = new Control1VaisseauColon(model,vue);
                     Control1VaisseauColon control1VaisseauColon2 = new Control1VaisseauColon(model,vue2);
 
-                }
+                }*/
                 dispose();
             }
         });

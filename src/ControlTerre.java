@@ -3,8 +3,8 @@ import java.awt.event.ActionListener;
 
 public class ControlTerre extends Control1 implements ActionListener {
 
-    public ControlTerre(Model model, Vue vue) {
-        super(model, vue);
+    public ControlTerre(Model model, Vue vue, VuePlateauJoueur vuePlateauJoueur) {
+        super(model, vue, vuePlateauJoueur);
         vue.setButtonController3(this);
     }
 

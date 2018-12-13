@@ -35,8 +35,8 @@ public class Vue extends JFrame {
     private JOptionPane Mars;
     private JOptionPane VaisseauColon;
 
-    private CarteVaisseauColon carteVaisseauColon1;
-    private CarteVaisseauColon carteVaisseauColon2;
+//    private CarteVaisseauColon carteVaisseauColon1;
+//    private CarteVaisseauColon carteVaisseauColon2;
 
 
 
@@ -77,8 +77,8 @@ public class Vue extends JFrame {
         pack();
         setTitle("Ganymede");
         Toolkit tk = Toolkit.getDefaultToolkit();
-        int xSize = ((int) tk.getScreenSize().getWidth());
-        int ySize = ((int) tk.getScreenSize().getHeight());
+        int xSize = (int)(tk.getScreenSize().getWidth());
+        int ySize = (int)(tk.getScreenSize().getHeight()/2);
         setSize(xSize,ySize);
         setVisible(true);                                 // Affiche la fenetre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Gestion de la fermeture
@@ -104,6 +104,7 @@ public class Vue extends JFrame {
             CarteVaisseauColon carte14 = new CarteVaisseauColon("src/img/navette/1PV_par_symbole_colon_bleu.png", Effet.un_pv_bleu_navtte);
             CarteVaisseauColon carte15 = new CarteVaisseauColon("src/img/navette/1PV_par_symbole_colon_violet.png", Effet.un_pv_violet_navtte);
             CarteVaisseauColon carte16 = new CarteVaisseauColon("src/img/navette/2PV_par_tuile.png", Effet.deux_pv_par_tuile_posseder_fin_partie);
+            carteVaisseauColonList.add(carte);
             carteVaisseauColonList.add(carte1);
             carteVaisseauColonList.add(carte2);
             carteVaisseauColonList.add(carte3);
@@ -409,35 +410,35 @@ public class Vue extends JFrame {
         getCarteTerreList().remove(0);
         ligneTerre.add(getBoardTerreList().get(3));
 
-        /*----------------------------------------------------------------------------------------*/
-        JButton colon = new JButton();
-        JButton colon1 = new JButton();
-        JButton colon2 = new JButton();
-
-        JPanel colonGrid = new JPanel();
-        colonGrid.setPreferredSize(new Dimension(150,150));
-        colonGrid.add(colon);
-        colonGrid.add(colon1);
-        colonGrid.add(colon2);
-        colonGrid.setLayout(new GridLayout(3,1));
-
-
-        JButton mars = new JButton("mars");
-        mars.setPreferredSize(new Dimension(100,150));
-        JButton terre = new JButton("terre");
-       terre.setPreferredSize(new Dimension(100,150));
-        carteVaisseauColon1 = new CarteVaisseauColon(null,null);
-        carteVaisseauColon1.setPreferredSize(new Dimension(100,150));
-        carteVaisseauColon2 = new CarteVaisseauColon(null,null);
-        carteVaisseauColon2.setPreferredSize(new Dimension(100,150));
-
-        JPanel plateau = new JPanel();
-        plateau.add(colonGrid);
-
-        plateau.add(mars);
-        plateau.add(terre);
-        plateau.add(carteVaisseauColon1);
-        plateau.add(carteVaisseauColon2);
+//        /*----------------------------------------------------------------------------------------*/
+//        JButton colon = new JButton();
+//        JButton colon1 = new JButton();
+//        JButton colon2 = new JButton();
+//
+//        JPanel colonGrid = new JPanel();
+//        colonGrid.setPreferredSize(new Dimension(150,150));
+//        colonGrid.add(colon);
+//        colonGrid.add(colon1);
+//        colonGrid.add(colon2);
+//        colonGrid.setLayout(new GridLayout(3,1));
+//
+//
+//        JButton mars = new JButton("mars");
+//        mars.setPreferredSize(new Dimension(100,150));
+//        JButton terre = new JButton("terre");
+//        terre.setPreferredSize(new Dimension(100,150));
+//        carteVaisseauColon1 = new CarteVaisseauColon(null,null);
+//        carteVaisseauColon1.setPreferredSize(new Dimension(100,150));
+//        carteVaisseauColon2 = new CarteVaisseauColon(null,null);
+//        carteVaisseauColon2.setPreferredSize(new Dimension(100,150));
+//
+//        JPanel plateau = new JPanel();
+//        plateau.add(colonGrid);
+//
+//        plateau.add(mars);
+//        plateau.add(terre);
+//        plateau.add(carteVaisseauColon1);
+//        plateau.add(carteVaisseauColon2);
 
         /*----------------------------------------------------------------------------------------*/
 
@@ -460,7 +461,7 @@ public class Vue extends JFrame {
         panAll.add(fenetre1);
         panAll.add(fenetre2);
         panAll.add(fenetre3);
-        panAll.add(plateau);
+//        panAll.add(plateau);
         setContentPane(panAll);
 
     }
@@ -657,19 +658,19 @@ public class Vue extends JFrame {
         VaisseauColon = vaisseauColon;
     }
 
-    public void setCarteVaisseauColon1(CarteVaisseauColon carteVaisseauColon1) {
-        this.carteVaisseauColon1 = carteVaisseauColon1;
-    }
-
-    public CarteVaisseauColon getCarteVaisseauColon1() {
-        return carteVaisseauColon1;
-    }
-
-    public CarteVaisseauColon getCarteVaisseauColon2() {
-        return carteVaisseauColon2;
-    }
-
-    public void setCarteVaisseauColon2(CarteVaisseauColon carteVaisseauColon2) {
-        this.carteVaisseauColon2 = carteVaisseauColon2;
-    }
+//    public void setCarteVaisseauColon1(CarteVaisseauColon carteVaisseauColon1) {
+//        this.carteVaisseauColon1 = carteVaisseauColon1;
+//    }
+//
+//    public CarteVaisseauColon getCarteVaisseauColon1() {
+//        return carteVaisseauColon1;
+//    }
+//
+//    public CarteVaisseauColon getCarteVaisseauColon2() {
+//        return carteVaisseauColon2;
+//    }
+//
+//    public void setCarteVaisseauColon2(CarteVaisseauColon carteVaisseauColon2) {
+//        this.carteVaisseauColon2 = carteVaisseauColon2;
+//    }
 }

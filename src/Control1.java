@@ -7,11 +7,13 @@ public abstract class Control1 {
 
      Model model;
      Vue vue;
+     VuePlateauJoueur vuePlateauJoueur;
 
 
-    public Control1(Model model, Vue vue) {
+    public Control1(Model model, Vue vue, VuePlateauJoueur vuePlateauJoueur) {
         this.model = model;
         this.vue = vue;
+        this.vuePlateauJoueur = vuePlateauJoueur;
     }
 
 

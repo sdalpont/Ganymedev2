@@ -3,8 +3,8 @@ import java.awt.event.ActionListener;
 
 public class Control1TuileColon extends Control1 implements ActionListener {
 
-    public Control1TuileColon(Model model, Vue vue){
-        super(model,vue);
+    public Control1TuileColon(Model model, Vue vue, VuePlateauJoueur vuePlateauJoueur){
+        super(model,vue,vuePlateauJoueur);
         vue.setButtonController1(this);
     }
 
