@@ -1,6 +1,11 @@
 public class Meeples {
     private int nbrJoueurs;
 
+
+    public Meeples(){
+
+    }
+
     public int getNbrJoueurs() {
         return nbrJoueurs;
     }

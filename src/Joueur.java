@@ -1,17 +1,24 @@
 import java.awt.*;
+import java.util.ArrayList;
+
 
 public class Joueur{
-    private int id;
-    private String name;
-    private int pointDeVictoires;
-    private int pointDeReputation;
-    private Color couleurJoueur;
+    int id;
+    String name;
+    int pointDeVictoires;
+    int pointDeReputation;
+    Color couleurJoueur;
+    int nbrAction ;
+
+
 
     public Joueur(int id, String name) {
         this.id = id;
         this.name = name;
+        nbrAction = 1;
         pointDeVictoires = 0;
         pointDeReputation = 0;
+
     }
 
     public int augmenterPoint(Joueur j){
@@ -67,4 +74,8 @@ public class Joueur{
         }
         return couleurJoueur;
     }
+
+    public int getNbrAction(){return nbrAction;}
+
+    public void setNbrAction(int nbrAction){this.nbrAction = nbrAction ;}
 }

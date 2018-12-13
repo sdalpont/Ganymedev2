@@ -3,8 +3,15 @@ import java.awt.*;
 
 public class Plateau {
 
-    public Plateau(Joueur joueur){
+    Joueur joueur ;
 
+    public Plateau(Joueur joueur){
+        this.joueur = joueur ;
+    }
+
+    public String savePlateau(Plateau plateau){
+       // Vue.
+        return ("Le plateau a été sauvegardé pour le joueur"+plateau.joueur.getName()) ;
     }
 
 

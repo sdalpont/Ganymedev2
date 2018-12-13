@@ -27,6 +27,12 @@ public class Vue extends JFrame {
     private List<CarteTerre> boardTerreList;
     private List<CarteTerre> deffauseTerreList;
 
+    ArrayList<Joueur> joueurList = new ArrayList<Joueur>();
+    ArrayList<TuileColon> plateauTuileJoueur = new ArrayList<TuileColon>();
+    ArrayList<CarteMars> mainMarsJoueur = new ArrayList<CarteMars>();
+    ArrayList<CarteTerre> mainTerreJoueur = new ArrayList<CarteTerre>();
+    ArrayList<CarteVaisseauColon> plateauVaisseauColon = new ArrayList<CarteVaisseauColon>();
+
     private Model model;
     private JButton tirerCarte;
 
@@ -461,7 +467,6 @@ public class Vue extends JFrame {
         panAll.add(fenetre1);
         panAll.add(fenetre2);
         panAll.add(fenetre3);
-//        panAll.add(plateau);
         setContentPane(panAll);
 
     }

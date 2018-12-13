@@ -9,14 +9,13 @@ public class VuePlateauJoueur extends JFrame {
 
     private CarteVaisseauColon carteVaisseauColon1;
     private CarteVaisseauColon carteVaisseauColon2;
-//    Vue vue;
-
 //    Joueur joueur;
     JLabel lname1, lname2, lptReputation1, lptReputation2, lptVictoire1, lptVictoire2, liconJoueur;
     Icon iconJoueur;
     private JButton augmenterScore = new JButton("Tirer carte");
     private JButton augmenterRep = new JButton("Augmenter reputation");
     private JButton laideReputation = new JButton("?");
+    ArrayList<TuileColon> plateauTuileJoueur = new ArrayList<TuileColon>();
 
     protected VuePlateauJoueur(Joueur joueur){
 
@@ -53,9 +52,13 @@ public class VuePlateauJoueur extends JFrame {
     }
 
     private void ajouterWigetVersion() {
-        JButton colon = new JButton();
-        JButton colon1 = new JButton();
-        JButton colon2 = new JButton();
+        TuileColon colon = new TuileColon(null,null,null);
+        TuileColon colon1 = new TuileColon(null,null,null);
+        TuileColon colon2 = new TuileColon(null,null,null);
+        plateauTuileJoueur.add(colon);
+        plateauTuileJoueur.add(colon1);
+        plateauTuileJoueur.add(colon2);
+
 
         JPanel colonGrid = new JPanel();
         colonGrid.setPreferredSize(new Dimension(150,150));

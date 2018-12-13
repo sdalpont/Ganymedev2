@@ -13,16 +13,9 @@ public class Control1VaisseauColon extends Control1 implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
-
         if (vue.getCarteVaisseauColonList().size() > 1) {
             if (e.getSource() == vue.getBoardVaisseauColonList().get(0)) {
                 placementDesVaisseauSurLePlateauJoueur(0);
-
-                System.out.println("bouton1");
-                System.out.println(vue.getCarteVaisseauColonList().get(0).getEffet());
-                System.out.println(vue.getCarteVaisseauColonList().size());
-                System.out.println(vue.getMainVaisseauColonList().get(vue.getMainVaisseauColonList().size() - 1).getEffet());
 
             }
             if (e.getSource() == vue.getBoardVaisseauColonList().get(1)) {
@@ -110,26 +103,36 @@ public class Control1VaisseauColon extends Control1 implements ActionListener {
     }
 
     private void placementDesVaisseauSurLePlateauJoueur(int i) {
+        for(int j=0; j< vue.joueurList.size(); j++ ){
+            CarteVaisseauColon vaisseauColon1Joueur = vuePlateauJoueur.getCarteVaisseauColon1();
+            CarteVaisseauColon vaisseauColon2Joueur = vuePlateauJoueur.getCarteVaisseauColon2();
+            if(vue.joueurList.get(j).getNbrAction() > 0){
+                if (vaisseau1EstNull) {
+                    vaisseau1EstNull = false;
+                    vaisseauColon1Joueur.setIcon(vue.getBoardVaisseauColonList().get(i).getIcon());
+                    vaisseauColon1Joueur.setEffet(vue.getBoardVaisseauColonList().get(i).getEffet());
+                    vue.plateauVaisseauColon.add(vaisseauColon1Joueur);
+                    vue.joueurList.get(j).nbrAction --; ;
 
-        CarteVaisseauColon vaisseauColon1Joueur = vuePlateauJoueur.getCarteVaisseauColon1();
-        CarteVaisseauColon vaisseauColon2Joueur = vuePlateauJoueur.getCarteVaisseauColon2();
-        if (vaisseau1EstNull) {
-            vaisseau1EstNull = false;
-            vaisseauColon1Joueur.setIcon(vue.getBoardVaisseauColonList().get(i).getIcon());
-            vaisseauColon1Joueur.setEffet(vue.getBoardVaisseauColonList().get(i).getEffet());
-        } else if (vaisseau2EstNull) {
-            vaisseau2EstNull = false;
-            vaisseauColon2Joueur.setIcon(vue.getBoardVaisseauColonList().get(i).getIcon());
-            vaisseauColon2Joueur.setEffet(vue.getBoardVaisseauColonList().get(i).getEffet());
-        }/* else {
-            System.out.println("On ne peut plus piocher de cartes");
-        }*/
+                } else if(vaisseau2EstNull) {
+                    vaisseau2EstNull = false;
+                    vaisseauColon2Joueur.setIcon(vue.getBoardVaisseauColonList().get(i).getIcon());
+                    vaisseauColon2Joueur.setEffet(vue.getBoardVaisseauColonList().get(i).getEffet());
+                    vue.plateauVaisseauColon.add(vaisseauColon2Joueur);
+                    vue.joueurList.get(j).nbrAction -- ;
+                }
 
-        vue.getMainVaisseauColonList().add(vue.getBoardVaisseauColonList().get(i));
-        CarteVaisseauColon VaisseauColon1 = vue.getBoardVaisseauColonList().get(i);
-        vue.getCarteVaisseauColonList().remove(0);
-        VaisseauColon1.setIcon(vue.getCarteVaisseauColonList().get(0).getIcon());
-        VaisseauColon1.setEffet(vue.getCarteVaisseauColonList().get(0).getEffet());
+                vue.getMainVaisseauColonList().add(vue.getBoardVaisseauColonList().get(i));
+                CarteVaisseauColon VaisseauColon1 = vue.getBoardVaisseauColonList().get(i);
+                vue.getCarteVaisseauColonList().remove(0);
+                VaisseauColon1.setIcon(vue.getCarteVaisseauColonList().get(0).getIcon());
+                VaisseauColon1.setEffet(vue.getCarteVaisseauColonList().get(0).getEffet());
+            }
+
+            else{
+                System.out.println("Le joueur n'a plus d'action");
+            }
+        }
     }
 }
 

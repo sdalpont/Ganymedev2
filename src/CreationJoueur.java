@@ -16,6 +16,11 @@ public class CreationJoueur extends JFrame {
     JTextArea j3 = new JTextArea(2,25);
     JTextArea j4 = new JTextArea(2,25);
 
+    Joueur nouvJ1 ;
+    Joueur nouvJ2;
+    Joueur nouvJ3 ;
+    Joueur nouvJ4;
+
     Model model = new Model();
     Vue vue = new Vue(model);
 
@@ -83,6 +88,9 @@ public class CreationJoueur extends JFrame {
                     Joueur nouvJ1 = new Joueur(1,j1.getText());
                     Joueur nouvJ2 = new Joueur(2,j2.getText());
 
+                    vue.joueurList.add(nouvJ1);
+                    vue.joueurList.add(nouvJ2);
+
                     VuePlateauJoueur vuePlateauJoueur1 = new VuePlateauJoueur(nouvJ1);
                     VuePlateauJoueur vuePlateauJoueur2 = new VuePlateauJoueur(nouvJ2);
 
@@ -101,9 +109,13 @@ public class CreationJoueur extends JFrame {
                 }
                 else if(nbrJoueur=="3"){
                     vue.setVisible(true);
-                    Joueur nouvJ1 = new Joueur(1,j1.getText());
-                    Joueur nouvJ2 = new Joueur(2,j2.getText());
-                    Joueur nouvJ3 = new Joueur(3,j3.getText());
+                    nouvJ1 = new Joueur(1,j1.getText());
+                    nouvJ2 = new Joueur(2, j2.getText());
+                    nouvJ3 = new Joueur(3,j3.getText());
+
+                   vue.joueurList.add(nouvJ1);
+                   vue.joueurList.add(nouvJ2);
+                   vue.joueurList.add(nouvJ3);
 
                     VuePlateauJoueur vuePlateauJoueur1 = new VuePlateauJoueur(nouvJ1);
                     VuePlateauJoueur vuePlateauJoueur2 = new VuePlateauJoueur(nouvJ2);
@@ -132,6 +144,11 @@ public class CreationJoueur extends JFrame {
                     Joueur nouvJ2 = new Joueur(2,j2.getText());
                     Joueur nouvJ3 = new Joueur(3,j3.getText());
                     Joueur nouvJ4 = new Joueur(4,j4.getText());
+
+                    vue.joueurList.add(nouvJ1);
+                    vue.joueurList.add(nouvJ2);
+                    vue.joueurList.add(nouvJ3);
+                    vue.joueurList.add(nouvJ4);
 
                     VuePlateauJoueur vuePlateauJoueur1 = new VuePlateauJoueur(nouvJ1);
                     VuePlateauJoueur vuePlateauJoueur2 = new VuePlateauJoueur(nouvJ2);
@@ -172,9 +189,17 @@ public class CreationJoueur extends JFrame {
 
     }
 
+    public Joueur getJoueur1(){return nouvJ1 ;}
+    public Joueur getJoueur2(){return nouvJ2 ;}
+    public Joueur getJoueur3(){return nouvJ3 ;}
+    public Joueur getJoueur4(){return nouvJ4 ;}
+
+
+
     class ItemState implements ItemListener {
         public void itemStateChanged(ItemEvent e) {
             System.out.println("ActionListener : action sur ");
         }
     }
+
 }

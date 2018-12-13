@@ -10,40 +10,48 @@ public class Control1TuileColon extends Control1 implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == vue.getBoardTuileColon().get(0) && vue.getMainTuileColon().size() < 3) {
-            vue.getMainTuileColon().add(vue.getBoardTuileColon().get(0));
-            TuileColon tuile1 = vue.getBoardTuileColon().get(0);
-            vue.getTuileColonList().remove(0);
-            tuile1.setIcon(vue.getTuileColonList().get(0).getIcon());
-            tuile1.setEffetTuile(vue.getTuileColonList().get(0).getEffetTuile());
-        }
+        for (int i = 0; i<vue.joueurList.size(); i++){
+            if(vuePlateauJoueur.plateauTuileJoueur.get(0).getIcon() != null){
+                if (e.getSource() == vue.getBoardTuileColon().get(0) && vue.getMainTuileColon().size() < 1) {
+                    vue.getMainTuileColon().add(vue.getBoardTuileColon().get(0));
+                    TuileColon tuile1 = vuePlateauJoueur.plateauTuileJoueur.get(0);
+                    vue.getTuileColonList().remove(0);
+                    tuile1.setIcon(vue.getTuileColonList().get(0).getIcon());
+                    tuile1.setEffetTuile(vue.getTuileColonList().get(0).getEffetTuile());
+                    vue.getMainTuileColon().remove(0);
+                }
 
-        else if (e.getSource() == vue.getBoardTuileColon().get(1)&& vue.getMainTuileColon().size() < 3) {
-            vue.getMainTuileColon().add(vue.getBoardTuileColon().get(1));
-            TuileColon tuile1 = vue.getBoardTuileColon().get(1);
-            vue.getTuileColonList().remove(0);
-            tuile1.setIcon(vue.getTuileColonList().get(0).getIcon());
-            tuile1.setEffetTuile(vue.getTuileColonList().get(0).getEffetTuile());
-        }
+                else if (e.getSource() == vue.getBoardTuileColon().get(1)&& vue.getMainTuileColon().size() < 1) {
+                    vue.getMainTuileColon().add(vue.getBoardTuileColon().get(1));
+                    TuileColon tuile1 = vuePlateauJoueur.plateauTuileJoueur.get(0);
+                    vue.getTuileColonList().remove(0);
+                    tuile1.setIcon(vue.getTuileColonList().get(0).getIcon());
+                    tuile1.setEffetTuile(vue.getTuileColonList().get(0).getEffetTuile());
+                    vue.getMainTuileColon().remove(0);
+                }
 
 
-        else if (e.getSource() == vue.getBoardTuileColon().get(2)&& vue.getMainTuileColon().size() < 3) {
-            vue.getMainTuileColon().add(vue.getBoardTuileColon().get(2));
-            TuileColon tuile1 = vue.getBoardTuileColon().get(2);
-            vue.getTuileColonList().remove(0);
-            tuile1.setIcon(vue.getTuileColonList().get(0).getIcon());
-            tuile1.setEffetTuile(vue.getTuileColonList().get(0).getEffetTuile());
-        }
+            else if (e.getSource() == vue.getBoardTuileColon().get(2)&& vue.getMainTuileColon().size() < 1) {
+                vue.getMainTuileColon().add(vue.getBoardTuileColon().get(2));
+                TuileColon tuile1 = vuePlateauJoueur.plateauTuileJoueur.get(2);
+                vue.getTuileColonList().remove(0);
+                tuile1.setIcon(vue.getTuileColonList().get(0).getIcon());
+                tuile1.setEffetTuile(vue.getTuileColonList().get(0).getEffetTuile());
+                vue.getMainTuileColon().remove(0);
+            }
 
-        else if (e.getSource() == vue.getBoardTuileColon().get(3)&& vue.getMainTuileColon().size() < 3) {
-            vue.getMainTuileColon().add(vue.getBoardTuileColon().get(3));
-            TuileColon tuile1 = vue.getBoardTuileColon().get(3);
-            vue.getTuileColonList().remove(0);
-            tuile1.setIcon(vue.getTuileColonList().get(0).getIcon());
-            tuile1.setEffetTuile(vue.getTuileColonList().get(0).getEffetTuile());
+            else if (e.getSource() == vue.getBoardTuileColon().get(2)&& vue.getMainTuileColon().size() < 1) {
+                vue.getMainTuileColon().add(vue.getBoardTuileColon().get(2));
+                TuileColon tuile1 = vuePlateauJoueur.plateauTuileJoueur.get(2);
+                vue.getTuileColonList().remove(0);
+                tuile1.setIcon(vue.getTuileColonList().get(0).getIcon());
+                tuile1.setEffetTuile(vue.getTuileColonList().get(0).getEffetTuile());
+                vue.getMainTuileColon().remove(0);
+            }
+            else{
+                System.out.println("Indication : Vous ne pouvez plus prendre de Tuile colonvousa avez épuisez toutes vos actions");
+            }
         }
-        else{
-            System.out.println("Indication : Vous ne pouvez plus prendre de Tile colon vous devez defausser une carte pour en repiocher");
         }
     }
 }
